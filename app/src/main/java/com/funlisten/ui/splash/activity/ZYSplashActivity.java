@@ -1,6 +1,5 @@
-package com.funlisten.ui.splash;
+package com.funlisten.ui.splash.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,7 +7,7 @@ import android.widget.ImageView;
 
 import com.funlisten.R;
 import com.funlisten.base.mvp.ZYBaseActivity;
-import com.funlisten.ui.home.ZYMainActivity;
+import com.funlisten.ui.main.activity.ZYMainActivity;
 
 import butterknife.Bind;
 

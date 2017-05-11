@@ -1,5 +1,6 @@
 package com.funlisten.base.mvp;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
@@ -38,9 +39,14 @@ public class ZYBaseActivity<P extends ZYIBasePresenter> extends AppCompatActivit
 
     protected P mPresenter;
 
+    protected Activity mActivity;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mActivity = this;
+
         if (ZYStatusBarUtils.isCanLightStatusBar() && tintStatusBar()) {
             setDarkMode(false);
             ZYStatusBarUtils.tintStatusBar(this, ContextCompat.getColor(this, getStatusColor()), 0);

@@ -1,22 +1,18 @@
-package com.smartreader.ui.main.contract;
+package com.funlisten.ui.main.contract;
 
-import com.smartreader.base.mvp.ZYIBasePresenter;
-import com.smartreader.base.mvp.ZYIBaseView;
-import com.smartreader.ui.main.model.bean.SRPage;
-import com.smartreader.ui.main.model.bean.SRTract;
-import com.smartreader.ui.main.model.bean.SRVersion;
-
-import java.util.List;
+import com.funlisten.base.mvp.ZYIBasePresenter;
+import com.funlisten.base.mvp.ZYIBaseView;
+import com.funlisten.ui.main.model.bean.ZYVersion;
 
 /**
  * Created by ZY on 17/3/16.
  */
 
-public interface SRMainContract {
+public interface ZYMainContract {
 
     interface IView extends ZYIBaseView<IPresenter> {
 
-        void showUpdateView(SRVersion version);
+        void showUpdateView(ZYVersion version);
 
     }
 

@@ -1,4 +1,4 @@
-package com.funlisten.ui.main.model;
+package com.funlisten.ui.main.model.bean;
 
 import com.funlisten.base.bean.ZYIBaseBean;
 

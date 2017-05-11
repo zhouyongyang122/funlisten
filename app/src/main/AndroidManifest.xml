@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.ZYSplashActivity">
+        <activity android:name=".ui.splash.activity.ZYSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
