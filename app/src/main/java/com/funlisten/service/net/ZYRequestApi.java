@@ -1,5 +1,6 @@
 package com.funlisten.service.net;
 import com.funlisten.base.bean.ZYResponse;
+import com.funlisten.ui.main.model.bean.ZYHome;
 import com.funlisten.ui.main.model.bean.ZYVersion;
 
 import java.util.List;
@@ -17,6 +18,12 @@ import rx.Observable;
 
 public interface ZYRequestApi {
 
+    @GET("basic/getVersion")
+    Observable<ZYResponse<ZYVersion>> getVersion();
+
+    @POST("home/queryHomeData")
+    Observable<ZYResponse<ZYHome>> getHomeData();
+
 //    @GET("basic/advert")
 //    Observable<ZYResponse<List<SRAdert>>> getAdverts(@Query("type") String type);
 //
@@ -25,9 +32,6 @@ public interface ZYRequestApi {
 //
 //    @GET("book/gradeList")
 //    Observable<ZYResponse<List<SRGrade>>> getGrades();
-
-    @GET("basic/getVersion")
-    Observable<ZYResponse<ZYVersion>> getVersion();
 //
 //    @GET("basic/html5")
 //    Observable<ZYResponse<ZYHtml5UrlBean>> getHtml5Urls();

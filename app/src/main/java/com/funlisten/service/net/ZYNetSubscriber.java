@@ -47,27 +47,20 @@ public class ZYNetSubscriber<R extends ZYResponse> extends rx.Subscriber<R> {
      */
     public void onNext(R response) {
         if (response != null) {
-            switch (response.status) {
-                case ZYResponse.STATUS_SUCCESS:
-                    onSuccess(response);
-                    break;
-                case ZYResponse.STATUS_403:
-                case ZYResponse.STATUS_401:
-                    //token失效
-                    try {
+
+            if (response.status.equals(ZYResponse.CODE_STATUS_SUCCESS)) {
+                onSuccess(response);
+            } else if (response.status.equals(ZYResponse.CODE_TOKEN_EXPIRE)) {
+                //token失效
+                try {
 //                        ZYToast.show(SRApplication.getInstance(), "登录信息失效,请重新登录");
 //                        ZYApplication.getInstance().getCurrentActivity().startActivity(SRLoginActivity.createIntent(SRApplication.getInstance().getCurrentActivity()));
-                    } catch (Exception e) {
-                        ZYLog.e(getClass().getSimpleName(), "onNext:" + e.getMessage());
-                    }
-                    onFail("登录信息失效,请重新登录");
-                    break;
-                case ZYResponse.STATUS_FAIL:
-                    onFail(response.msg);
-                    break;
-                default:
-                    onOtherResponse(response.status, response.msg);
-                    break;
+                } catch (Exception e) {
+                    ZYLog.e(getClass().getSimpleName(), "onNext:" + e.getMessage());
+                }
+                onFail("登录信息失效,请重新登录");
+            } else {
+                onFail(response.msg);
             }
         } else {
             onFail(errorMsg);

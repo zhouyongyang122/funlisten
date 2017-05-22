@@ -1,7 +1,12 @@
 package com.funlisten.ui.login.model;
 
 import android.text.TextUtils;
+
+import com.funlisten.service.db.ZYDBManager;
+import com.funlisten.service.db.entity.ZYUserDao;
 import com.funlisten.ui.login.model.bean.ZYUser;
+
+import java.util.List;
 
 /**
  * Created by ZY on 17/4/2.
@@ -25,19 +30,18 @@ public class ZYUserManager {
     }
 
     private ZYUser getLoginUser() {
-//        SRUserDao userDao = ZYDBManager.getInstance().getReadableDaoSession().getSRUserDao();
-//        List<SRUser> users = userDao.loadAll();
-//        if (users == null || users.size() < 0) {
-//            return new SRUser();
-//        } else {
-//            for (SRUser user : users) {
-//                if (user.isLoginUser) {
-//                    return user;
-//                }
-//            }
-//        }
-//        return new SRUser();
-        return null;
+        ZYUserDao userDao = ZYDBManager.getInstance().getReadableDaoSession().getZYUserDao();
+        List<ZYUser> users = userDao.loadAll();
+        if (users == null || users.size() < 0) {
+            return new ZYUser();
+        } else {
+            for (ZYUser user : users) {
+                if (user.isLoginUser) {
+                    return user;
+                }
+            }
+        }
+        return new ZYUser();
     }
 
     public ZYUser getUser() {

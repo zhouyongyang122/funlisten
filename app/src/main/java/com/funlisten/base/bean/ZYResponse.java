@@ -6,12 +6,28 @@ package com.funlisten.base.bean;
 
 public class ZYResponse<D> implements ZYIBaseBean {
 
-    public static final int STATUS_SUCCESS  = 1;
-    public static final int STATUS_FAIL     = 0;
-    public static final int STATUS_403      = 403;
-    public static final int STATUS_401      = 401;
+    /*
+    * 响应成功
+    */
+    public static final String CODE_STATUS_SUCCESS = "ok";
+    /**
+     * 参数错误
+     */
+    public static final String CODE_PARAM_ERROR = "501";
+    /**
+     * 业务异常
+     */
+    public static final String BIZ_SERVICE_ERROR = "502";
+    /**
+     * 服务器异常
+     */
+    public static final String CODE_SERVICE_ERROR = "503";
+    /**
+     * token失效
+     */
+    public static final String CODE_TOKEN_EXPIRE = "601";
 
-    public int status;
+    public String status = "";
 
     public String msg;
 

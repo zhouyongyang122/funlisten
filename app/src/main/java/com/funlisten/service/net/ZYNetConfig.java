@@ -26,8 +26,11 @@ public class ZYNetConfig {
         headers.put("Device-Model", headerFormat(Build.MODEL));
         headers.put("Umeng-Channel", ZYChannelUtil.getChannel(ZYApplication.getInstance()));
         headers.put("User-Agent", "android");
+        headers.put("clientType", "android");
+        headers.put("_v", "1.0.0");
+        headers.put("imei",ZYDeviceIDUtil.getInstance().getDeviceID(ZYApplication.getInstance()));
         headers.put("versionCode", BuildConfig.VERSION_CODE + "");
-        headers.put("idfa", ZYDeviceIDUtil.getInstance().getDeviceID(ZYApplication.getInstance()));
+//        headers.put("idfa", ZYDeviceIDUtil.getInstance().getDeviceID(ZYApplication.getInstance()));
         return headers;
     }
 

@@ -24,12 +24,18 @@ public class ZYSplashActivity extends ZYBaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.zy_activity_splash);
-
+        hideActionBar();
         imgSplash.postDelayed(new Runnable() {
             @Override
             public void run() {
                 startActivity(new Intent(mActivity, ZYMainActivity.class));
+                finish();
             }
         }, 1000);
+    }
+
+    @Override
+    protected boolean tintStatusBar() {
+        return false;
     }
 }
