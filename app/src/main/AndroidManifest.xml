@@ -22,6 +22,10 @@
             android:name=".ui.main.activity.ZYMainActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".base.activity.ZYWebViewActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
@@ -46,7 +47,7 @@ public class ZYHomeBannerVH extends ZYBaseViewHolder<List<ZYHome.Banner>> {
     @Override
     public void findView(View view) {
         super.findView(view);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) mBanner.getLayoutParams();
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mBanner.getLayoutParams();
         params.height = ZYScreenUtils.getScreenWidth(mContext) * 175 / 374;
         mBanner.setLayoutParams(params);
     }
@@ -74,15 +75,6 @@ public class ZYHomeBannerVH extends ZYBaseViewHolder<List<ZYHome.Banner>> {
     @Override
     public int getLayoutResId() {
         return R.layout.zy_view_home_banner;
-    }
-
-    @OnClick({R.id.layoutSearch})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.layoutSearch:
-                //跳转到搜索界面
-                break;
-        }
     }
 
     public interface OnHomeBannerListener {
