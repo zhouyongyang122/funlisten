@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/libs/libammsdk.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47f4993168154fa73377d7470b9f6887d48a8023">
+        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/libammsdk_afe0c0ef0e9376d9ce8ad8dfa71b2f406c40ef71.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/libs/weibosdkcore_v3.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="97d3bda92040cc86699c1c4793d67c7235637386">
+        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/weibosdkcore_v3.1.1_d693c4a1ca3cc21294fff2c8d68fa071bf2b2eb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/libs/Msc.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4f11330834f00ecbf76acef91a5e3be24b99f9fd">
+        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/Msc_543f4a01b963973cbcd42824dc9b8753d1f8431f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/libs/open_sdk_r4346_lite.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2dd5147e853e5af9c7000b25be4d7bd2bc8c6977">
+        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/open_sdk_r4346_lite_382f266a3dddf32439a656fc83ddf54b79846d93.jar" />
+    </item>
+
+</items>

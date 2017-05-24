@@ -18,6 +18,8 @@ import com.funlisten.base.view.ZYLoadingView;
 import com.funlisten.ui.main.contract.ZYHomeContract;
 import com.funlisten.ui.main.model.bean.ZYHome;
 import com.funlisten.ui.main.view.viewHolder.ZYHomeBannerVH;
+import com.funlisten.ui.main.view.viewHolder.ZYHomeDayListenVH;
+import com.funlisten.ui.main.view.viewHolder.ZYHomeModulVH;
 import com.funlisten.utils.ZYStatusBarUtils;
 
 import java.util.List;
@@ -58,11 +60,23 @@ public class ZYHomeFragment extends ZYBaseFragment<ZYHomeContract.IPresenter> im
         layoutParams.height = ZYStatusBarUtils.getStatusBarHeight(mActivity);
         viewTop.setLayoutParams(layoutParams);
         initLoadingView();
+        layout_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mPresenter.loadData();
+            }
+        });
         return view;
     }
 
     private void initLoadingView() {
         loadingView = new ZYLoadingView(mActivity);
+        loadingView.setRetryListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.subscribe();
+            }
+        });
         loadingView.attach(rootView);
     }
 
@@ -77,8 +91,29 @@ public class ZYHomeFragment extends ZYBaseFragment<ZYHomeContract.IPresenter> im
 
     @Override
     public void refreshView(ZYHome home) {
+        layout_refresh.setRefreshing(false);
         layout_module_root.removeAllViews();
         showBanner(home.recommendBannerDtoList);
+        showDayListen(home.everyDayListeningDto);
+        showModules(home.moduleDtoList);
+    }
+
+    private void showModules(List<ZYHome.Module> moduleDtoList) {
+        if (moduleDtoList != null) {
+            for (ZYHome.Module module : moduleDtoList) {
+                ZYHomeModulVH modulVH = new ZYHomeModulVH();
+                modulVH.bindView(LayoutInflater.from(mActivity).inflate(modulVH.getLayoutResId(), layout_module_root, false));
+                layout_module_root.addView(modulVH.getItemView());
+                modulVH.updateView(module, 0);
+            }
+        }
+    }
+
+    private void showDayListen(ZYHome.DayListening dayListening) {
+        ZYHomeDayListenVH dayListenVH = new ZYHomeDayListenVH();
+        dayListenVH.bindView(LayoutInflater.from(mActivity).inflate(dayListenVH.getLayoutResId(), layout_module_root, false));
+        layout_module_root.addView(dayListenVH.getItemView());
+        dayListenVH.updateView(dayListening, 0);
     }
 
     private void showBanner(List<ZYHome.Banner> banners) {
