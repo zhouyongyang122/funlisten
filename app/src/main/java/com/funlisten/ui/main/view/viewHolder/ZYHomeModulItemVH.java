@@ -34,7 +34,7 @@ public class ZYHomeModulItemVH extends ZYBaseViewHolder<ZYHome.ModuleItem> {
     public void findView(View view) {
         super.findView(view);
 
-        int width = ZYScreenUtils.getScreenWidth(mContext) / 3;
+        int width = (ZYScreenUtils.getScreenWidth(mContext) - ZYScreenUtils.dp2px(mContext, 30)) / 3;
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imgBg.getLayoutParams();
         layoutParams.width = width;
         layoutParams.height = width;

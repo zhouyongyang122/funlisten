@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="15dp"
     android:background="@color/white"
     android:paddingBottom="25dp">
 
@@ -17,6 +17,7 @@
         <ImageView
             android:id="@+id/imgIcon"
             android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_height="wrap_content"
             android:background="@drawable/home_icon_mrjt_d" />
 
@@ -24,6 +25,7 @@
             android:id="@+id/imgArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:background="@drawable/btn_next_n" />
 
@@ -31,10 +33,11 @@
             android:id="@+id/textTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/imgArrow"
             android:layout_toRightOf="@+id/imgIcon"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:singleLine="true" />
 
     </RelativeLayout>

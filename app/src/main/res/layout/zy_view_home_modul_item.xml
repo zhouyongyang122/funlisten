@@ -7,8 +7,9 @@
     <ImageView
         android:id="@+id/imgBg"
         android:layout_width="110dp"
+        android:scaleType="centerCrop"
         android:layout_height="110dp"
-        android:background="@color/def_bg" />
+        android:src="@color/def_bg" />
 
     <TextView
         android:id="@+id/textPay"

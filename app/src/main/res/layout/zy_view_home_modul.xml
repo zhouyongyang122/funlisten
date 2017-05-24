@@ -18,6 +18,7 @@
             android:id="@+id/imgIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:background="@drawable/home_icon_rmph_d" />
 
         <ImageView
@@ -25,16 +26,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             android:background="@drawable/btn_next_n" />
 
         <TextView
             android:id="@+id/textTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/imgArrow"
             android:layout_toRightOf="@+id/imgIcon"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
             android:singleLine="true" />
 
     </RelativeLayout>
@@ -42,6 +45,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layoutTitle" />
 

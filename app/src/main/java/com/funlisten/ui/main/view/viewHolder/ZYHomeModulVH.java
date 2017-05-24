@@ -64,6 +64,7 @@ public class ZYHomeModulVH extends ZYBaseViewHolder<ZYHome.Module> {
                 });
                 recyclerView.setLayoutManager(new GridLayoutManager(mContext, 3));
                 recyclerView.setAdapter(mAdapter);
+                recyclerView.setNestedScrollingEnabled(false);
             }
             mAdapter.setDatas(data.moduleDetailDtoList);
         }
