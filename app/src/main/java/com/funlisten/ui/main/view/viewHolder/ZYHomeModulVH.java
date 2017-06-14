@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.funlisten.R;
 import com.funlisten.base.adapter.ZYBaseRecyclerAdapter;
 import com.funlisten.base.viewHolder.ZYBaseViewHolder;
 import com.funlisten.thirdParty.image.ZYImageLoadHelper;
+import com.funlisten.ui.ablum.activity.ZYAblumListHomeActivity;
 import com.funlisten.ui.main.model.bean.ZYHome;
 
 import butterknife.Bind;
@@ -22,6 +24,9 @@ import butterknife.Bind;
  */
 
 public class ZYHomeModulVH extends ZYBaseViewHolder<ZYHome.Module> {
+
+    @Bind(R.id.layoutTitle)
+    RelativeLayout layoutTitle;
 
     @Bind(R.id.imgIcon)
     ImageView imgIcon;
@@ -49,6 +54,12 @@ public class ZYHomeModulVH extends ZYBaseViewHolder<ZYHome.Module> {
             mData = data;
             ZYImageLoadHelper.getImageLoader().loadImage(this, imgIcon, data.iconImageUrl);
             textTitle.setText(data.moduleName);
+            layoutTitle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mContext.startActivity(ZYAblumListHomeActivity.createIntent(mContext));
+                }
+            });
             if (mAdapter == null) {
                 mAdapter = new ZYBaseRecyclerAdapter<ZYHome.ModuleItem>() {
                     @Override

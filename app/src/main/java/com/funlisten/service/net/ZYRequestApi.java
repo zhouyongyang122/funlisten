@@ -1,5 +1,9 @@
 package com.funlisten.service.net;
+
+import com.funlisten.base.bean.ZYListResponse;
 import com.funlisten.base.bean.ZYResponse;
+import com.funlisten.ui.ablum.model.ZYAblum;
+import com.funlisten.ui.ablum.model.ZYCatalog;
 import com.funlisten.ui.main.model.bean.ZYHome;
 import com.funlisten.ui.main.model.bean.ZYVersion;
 
@@ -23,6 +27,12 @@ public interface ZYRequestApi {
 
     @POST("home/queryHomeData")
     Observable<ZYResponse<ZYHome>> getHomeData();
+
+    @POST("category/list")
+    Observable<ZYResponse<List<ZYCatalog>>> getCatalogs(@Query("level") int level);
+
+    @POST("album/list")
+    Observable<ZYResponse<ZYListResponse<ZYAblum>>> getAblums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId, @Query("publisherId") int publisherId);
 
 //    @GET("basic/advert")
 //    Observable<ZYResponse<List<SRAdert>>> getAdverts(@Query("type") String type);

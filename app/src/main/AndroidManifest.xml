@@ -26,6 +26,10 @@
             android:name=".base.activity.ZYWebViewActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".ui.ablum.activity.ZYAblumListHomeActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
