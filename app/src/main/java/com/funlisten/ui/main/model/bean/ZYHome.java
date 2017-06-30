@@ -19,7 +19,7 @@ public class ZYHome implements ZYIBaseBean {
     public static class Banner {
         public String type;//专辑(album)audio(音频)h5（h5地址)
         public String imageFileUrl;//图片地址
-        public String objectId;
+        public String id;
         public String url;
     }
 
@@ -27,15 +27,15 @@ public class ZYHome implements ZYIBaseBean {
         public int id;//模块id
         public String location;//模块位置
         public String moduleCode;//模块code
+        public String type;//模块类型
         public String moduleName;//模块名称
         public String iconImageUrl;//模块图标名称
         public List<ModuleItem> moduleDetailDtoList;//模块数据集合
     }
 
     public static class ModuleItem {
-        public String imageUrl;//背景地址
-        public String objectId;//对象id
-        public int objectIdSort;//排序id
+        public String coverUrl;//背景地址
+        public String id;//对象id
     }
 
     public static class DayListening {

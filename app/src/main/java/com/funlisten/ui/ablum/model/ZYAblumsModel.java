@@ -21,4 +21,8 @@ public class ZYAblumsModel extends ZYBaseModel {
     public Observable<ZYResponse<ZYListResponse<ZYAblum>>> getAblums(int pageIndex, int pageSize, int categoryId, int publisherId) {
         return mApi.getAblums(pageIndex, pageSize, categoryId, publisherId);
     }
+
+    public Observable<ZYResponse<ZYListResponse<ZYAblum>>> getAblums(int pageIndex, int pageSize, int categoryId) {
+        return mApi.getAblums(pageIndex, pageSize, categoryId);
+    }
 }

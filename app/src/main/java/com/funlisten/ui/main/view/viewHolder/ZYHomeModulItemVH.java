@@ -52,7 +52,7 @@ public class ZYHomeModulItemVH extends ZYBaseViewHolder<ZYHome.ModuleItem> {
             } else {
                 mItemView.setPadding(ZYScreenUtils.dp2px(mContext, 3), 0, ZYScreenUtils.dp2px(mContext, 3), 0);
             }
-            ZYImageLoadHelper.getImageLoader().loadImage(this, imgBg, mData.imageUrl);
+            ZYImageLoadHelper.getImageLoader().loadImage(this, imgBg, mData.coverUrl);
             textTitle.setText("没有提供标题");
             textPay.setVisibility(View.VISIBLE);
         }

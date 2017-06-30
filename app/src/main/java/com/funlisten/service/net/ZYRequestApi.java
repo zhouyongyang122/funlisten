@@ -34,6 +34,9 @@ public interface ZYRequestApi {
     @POST("album/list")
     Observable<ZYResponse<ZYListResponse<ZYAblum>>> getAblums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId, @Query("publisherId") int publisherId);
 
+    @POST("album/list")
+    Observable<ZYResponse<ZYListResponse<ZYAblum>>> getAblums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId);
+
 //    @GET("basic/advert")
 //    Observable<ZYResponse<List<SRAdert>>> getAdverts(@Query("type") String type);
 //

@@ -1,6 +1,7 @@
 package com.funlisten.base.mvp;
 
 import com.funlisten.ZYApplication;
+import com.funlisten.base.bean.ZYListResponse;
 import com.funlisten.base.bean.ZYResponse;
 import com.funlisten.utils.ZYToast;
 
@@ -19,7 +20,7 @@ public abstract class ZYListDataPresenter<V extends ZYListDataContract.View, M, 
 
     protected List<D> mDataList = new ArrayList<>();
 
-    protected int mStart;
+    protected int mPageIndex = 1;
     protected int mRows = 10;
 
     protected boolean isFristLoad = true;
@@ -39,13 +40,13 @@ public abstract class ZYListDataPresenter<V extends ZYListDataContract.View, M, 
 
     @Override
     public void refresh() {
-        mStart = 0;
+        mPageIndex = 1;
         loadData();
     }
 
     @Override
     public void loadMore() {
-        mStart += mRows;
+        mPageIndex += 1;
         loadData();
     }
 
@@ -56,20 +57,21 @@ public abstract class ZYListDataPresenter<V extends ZYListDataContract.View, M, 
 
     protected abstract void loadData();
 
-    protected void success(ZYResponse<List<D>> response) {
+    protected void success(ZYResponse<ZYListResponse<D>> response) {
         isFristLoad = false;
-        List<D> dataList = response.data;
-        success(dataList);
+        ZYListResponse<D> listResponse = response.data;
+        List<D> dataList = listResponse.data;
+        success(dataList, listResponse.totalPage > listResponse.pageIndex);
     }
 
-    protected void success(List<D> dataList) {
+    protected void success(List<D> dataList, boolean hasNext) {
         isFristLoad = false;
         if (isRefresh()) {
             mDataList.clear();
         }
         if (dataList != null && !dataList.isEmpty()) {
             mDataList.addAll(dataList);
-            mView.showList(true);
+            mView.showList(hasNext);
         } else if (mDataList.isEmpty()) {
             mView.showEmpty();
         } else {
@@ -87,6 +89,6 @@ public abstract class ZYListDataPresenter<V extends ZYListDataContract.View, M, 
     }
 
     public boolean isRefresh() {
-        return mStart == 0;
+        return mPageIndex == 1;
     }
 }

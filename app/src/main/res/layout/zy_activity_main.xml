@@ -85,7 +85,19 @@
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/c1">
+        android:background="@drawable/home_btn_playkey_n">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="match_parent"
+            android:src="@drawable/def_avatar"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imgPlayer"
+            android:layout_width="match_parent"
+            android:src="@drawable/home_btn_playkey_off_n"
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 </RelativeLayout>

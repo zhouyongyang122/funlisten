@@ -44,9 +44,8 @@ public class ZYAblumListHomeFragment extends ZYBaseFragment<ZYAblumListHomeContr
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.zy_fragment_ablum_list_home, container, false);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
         initLoadingView();
-
         return view;
     }
 
@@ -62,7 +61,7 @@ public class ZYAblumListHomeFragment extends ZYBaseFragment<ZYAblumListHomeContr
         ZYAblumListFragment ablumListFragment;
         for (ZYCatalog catalog : catalogs) {
             ablumListFragment = new ZYAblumListFragment();
-            new ZYAblumListPresenter(ablumListFragment,new ZYAblumsModel());
+            new ZYAblumListPresenter(ablumListFragment, new ZYAblumsModel(), catalog.id);
             fragmentAdapter.addFragment(ablumListFragment, catalog.name);
         }
         viewPager.setAdapter(fragmentAdapter);
@@ -82,6 +81,7 @@ public class ZYAblumListHomeFragment extends ZYBaseFragment<ZYAblumListHomeContr
 
             }
         });
+        viewPager.setOffscreenPageLimit(4);
         tabLayout.setupWithViewPager(viewPager);
     }
 
@@ -91,7 +91,8 @@ public class ZYAblumListHomeFragment extends ZYBaseFragment<ZYAblumListHomeContr
         loadingView.setRetryListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                loadingView.showLoading();
+                mPresenter.loadData();
             }
         });
     }

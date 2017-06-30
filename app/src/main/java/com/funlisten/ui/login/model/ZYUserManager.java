@@ -2,8 +2,10 @@ package com.funlisten.ui.login.model;
 
 import android.text.TextUtils;
 
+import com.funlisten.ZYApplication;
 import com.funlisten.service.db.ZYDBManager;
 import com.funlisten.service.db.entity.ZYUserDao;
+import com.funlisten.ui.login.activity.ZYLoginActivity;
 import com.funlisten.ui.login.model.bean.ZYUser;
 
 import java.util.List;
@@ -66,7 +68,7 @@ public class ZYUserManager {
         boolean isGuester = TextUtils.isEmpty(user.uid);
         if (needIntentToLogin && isGuester) {
             //跳到登录
-//            ZYApplication.getInstance().getCurrentActivity().startActivity(SRLoginActivity.createIntent(SRApplication.getInstance().getCurrentActivity()));
+            ZYApplication.getInstance().getCurrentActivity().startActivity(ZYLoginActivity.createIntent(ZYApplication.getInstance().getCurrentActivity()));
         }
         return isGuester;
     }
