@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import com.funlisten.ZYAppConstants;
 import com.funlisten.ZYApplication;
-import com.funlisten.ui.login.model.bean.ZYThridLoginParamas;
+import com.funlisten.business.login.model.bean.ZYThridLoginParamas;
 import com.funlisten.utils.ZYLog;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQToken;

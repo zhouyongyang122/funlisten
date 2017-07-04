@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.funlisten.ZYAppConstants;
 import com.funlisten.service.net.ZYOkHttpNetManager;
-import com.funlisten.ui.login.model.bean.ZYThridLoginParamas;
+import com.funlisten.business.login.model.bean.ZYThridLoginParamas;
 import com.funlisten.utils.ZYLog;
 import com.funlisten.utils.ZYMd5Utils;
 import com.third.loginshare.entity.WeiboUserInfo;

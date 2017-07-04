@@ -57,6 +57,8 @@ public class ZYBaseActivity<P extends ZYIBasePresenter> extends AppCompatActivit
         } catch (Exception e) {
 
         }
+
+        ZYApplication.getInstance().addActivity(this);
     }
 
     @Override
@@ -126,6 +128,8 @@ public class ZYBaseActivity<P extends ZYIBasePresenter> extends AppCompatActivit
             ZYLog.e(getClass().getSimpleName(), "onDestroy-error: " + e.getMessage());
         }
         ZYLog.e(getClass().getSimpleName(), "onDestroy");
+
+        ZYApplication.getInstance().removeActivity(this);
     }
 
     /**

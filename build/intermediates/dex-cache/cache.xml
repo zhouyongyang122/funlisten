@@ -30,57 +30,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/zhouyongyang/.android/build-cache/8f599666fd89a2ab386384df07a5a381636bb874/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
-        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/classes_dfd8b3cd054b2cac865ec1fe91693657b90c5a20.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/libs/open_sdk_r4346_lite.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="2dd5147e853e5af9c7000b25be4d7bd2bc8c6977">
         <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/open_sdk_r4346_lite_382f266a3dddf32439a656fc83ddf54b79846d93.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zhouyongyang/.android/build-cache/a0ed752c24b24fb9f4b7ccf0b0106bce2903d52d/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
-        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/classes_a4d3934943ba2b29d946555f8f11385f660cd7c9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zhouyongyang/.gradle/caches/modules-2/files-2.1/com.umeng.analytics/analytics/6.1.1/4bff754fc05336940a8cb348e455c01515b5d883/analytics-6.1.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4bff754fc05336940a8cb348e455c01515b5d883">
-        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/analytics-6.1.1_688d89ef97bd143227510998dfcedf86a647a74b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zhouyongyang/.android/build-cache/0300bd6a3fd5b954c905eee11cf896dcafcc09d7/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="14c09a37dfdc5f374d15219f57e4fa3a4ff8e113">
-        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/classes_86841c31ed252426c75b5bb9a1d9b012b53d93f8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zhouyongyang/.android/build-cache/09933d25ac3b9e3ae8e81bb8c64989212b34ed4c/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.2"
-        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
-        <dex dex="/Users/zhouyongyang/Documents/work/funlisten/funlisten/app/build/intermediates/pre-dexed/debug/classes_2f1a3ae5c84179c399b53d27aa8cd24d04b79970.jar" />
     </item>
 
 </items>

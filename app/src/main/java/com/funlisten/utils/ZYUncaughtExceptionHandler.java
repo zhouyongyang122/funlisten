@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
 
+import com.funlisten.ZYApplication;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -108,6 +110,7 @@ public class ZYUncaughtExceptionHandler implements Thread.UncaughtExceptionHandl
 
         if (isDebug) {
             mDefaultHandler.uncaughtException(thread, ex);
+            ZYApplication.getInstance().finisedAllActivities();
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
         } else {
@@ -123,7 +126,6 @@ public class ZYUncaughtExceptionHandler implements Thread.UncaughtExceptionHandl
 //            // 如果用户没有处理则让系统默认的异常处理器来处理
 //            mDefaultHandler.uncaughtException(thread, ex);
 //        } else {
-//            IShowDubbingApplication.getInstance().finishAllActivity();
 //            android.os.Process.killProcess(android.os.Process.myPid());
 //            System.exit(1);
 //        }

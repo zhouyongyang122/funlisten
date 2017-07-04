@@ -14,6 +14,7 @@ import com.funlisten.utils.ZYLog;
 import com.funlisten.utils.ZYUncaughtExceptionHandler;
 
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by ZY on 17/4/27.
@@ -34,6 +35,8 @@ public class ZYApplication extends Application implements ZYUncaughtExceptionHan
     public static final String CACHE_ROOT_DIR = APP_ROOT_DIR + File.separator + "cache" + File.separator;
 
     private Activity currentActivity;
+
+    private ArrayList<Activity> allActivities = new ArrayList<Activity>();
 
     @Override
     public void onCreate() {
@@ -113,8 +116,27 @@ public class ZYApplication extends Application implements ZYUncaughtExceptionHan
         this.currentActivity = currentActivity;
     }
 
+    public void addActivity(Activity activity){
+        allActivities.add(activity);
+    }
+
+    public void removeActivity(Activity activity){
+        allActivities.remove(activity);
+    }
+
+    public void finisedAllActivities(){
+        try {
+            for (Activity activity : allActivities){
+                if(activity != null && !activity.isDestroyed() && !activity.isFinishing()){
+                    activity.finish();
+                }
+            }
+        }catch (Exception e){
+
+        }
+    }
+
     @Override
     public void onUncaughtExceptionHappen(Thread thread, Throwable ex) {
-
     }
 }

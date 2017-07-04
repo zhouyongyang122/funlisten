@@ -8,7 +8,7 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.funlisten.ui.login.model.bean.ZYUser;
+import com.funlisten.business.login.model.bean.ZYUser;
 
 import com.funlisten.service.db.entity.ZYUserDao;
 

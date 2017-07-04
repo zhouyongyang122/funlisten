@@ -4,7 +4,7 @@ import android.os.Build;
 
 import com.funlisten.BuildConfig;
 import com.funlisten.ZYApplication;
-import com.funlisten.ui.login.model.ZYUserManager;
+import com.funlisten.business.login.model.ZYUserManager;
 import com.funlisten.utils.ZYChannelUtil;
 import com.funlisten.utils.ZYDeviceIDUtil;
 
@@ -36,11 +36,11 @@ public class ZYNetConfig {
 
     public HashMap<String, String> getDefParams() {
         HashMap<String, String> params = new HashMap<>();
-        if(ZYUserManager.getInstance().getUser().uid != null){
-            params.put("uid", ZYUserManager.getInstance().getUser().uid);
+        if(ZYUserManager.getInstance().getUser().id != null){
+            params.put("uid", ZYUserManager.getInstance().getUser().id);
         }
-        if(ZYUserManager.getInstance().getUser().auth_token != null){
-            params.put("auth_token", ZYUserManager.getInstance().getUser().auth_token);
+        if(ZYUserManager.getInstance().getUser().token != null){
+            params.put("auth_token", ZYUserManager.getInstance().getUser().token);
         }
         return params;
     }

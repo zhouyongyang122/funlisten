@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.splash.activity.ZYSplashActivity">
+        <activity android:name=".business.splash.activity.ZYSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,7 @@
         </activity>
 
         <activity
-            android:name=".ui.main.activity.ZYMainActivity"
+            android:name=".business.main.activity.ZYMainActivity"
             android:screenOrientation="portrait" />
 
         <activity
@@ -27,11 +27,15 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.ablum.activity.ZYAblumListHomeActivity"
+            android:name=".business.album.activity.ZYAlbumListHomeActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.login.activity.ZYLoginActivity"
+            android:name=".business.login.activity.ZYLoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".business.login.activity.ZYRegistActivity"
             android:screenOrientation="portrait" />
 
     </application>

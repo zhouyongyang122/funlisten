@@ -1,40 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/c7"
-    android:orientation="vertical">
+    android:id="@+id/rootLayout">
 
-    <LinearLayout
-        android:id="@+id/layoutEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/white"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:text="+86"
-            android:paddingLeft="15dp"
-            android:textColor="@color/c2"
-            android:textSize="@dimen/f1" />
-
-        <com.funlisten.base.view.ZYClearEditView
-            android:id="@+id/editPwd"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:gravity="center_vertical"
-            android:hint="请输入手机号码 "
-            android:paddingLeft="10dp"
-            android:textColor="@color/c5"
-            android:textSize="@dimen/f2" />
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
