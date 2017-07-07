@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.funlisten.R;
 import com.funlisten.base.adapter.ZYBaseRecyclerAdapter;
 import com.funlisten.base.viewHolder.ZYBaseViewHolder;
+import com.funlisten.business.album.activity.ZYAlbumHomeActivity;
 import com.funlisten.thirdParty.image.ZYImageLoadHelper;
 import com.funlisten.business.album.activity.ZYAlbumListHomeActivity;
 import com.funlisten.business.main.model.bean.ZYHome;
@@ -69,7 +70,8 @@ public class ZYHomeModulVH extends ZYBaseViewHolder<ZYHome.Module> {
                 mAdapter.setOnItemClickListener(new ZYBaseRecyclerAdapter.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-
+                        ZYHome.ModuleItem moduleItem = mAdapter.getItem(position);
+                        mContext.startActivity(ZYAlbumHomeActivity.createIntent(mContext, moduleItem.id));
                     }
                 });
                 recyclerView.setLayoutManager(new GridLayoutManager(mContext, 3));

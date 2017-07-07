@@ -60,7 +60,19 @@ public class ZYAlbumDetail implements ZYIBaseBean {
 
     public List<Detail> details;
 
+    public List<ZYCategory> categoryList;
+
     public String backgoundUrl;//背景
+
+    public String getCategoryNames() {
+        String names = "";
+        if (categoryList != null && categoryList.size() > 0) {
+            for (ZYCategory category : categoryList) {
+                names += "," + category.name;
+            }
+        }
+        return names;
+    }
 
     public class Detail implements ZYIBaseBean {
         public String title;
@@ -76,5 +88,7 @@ public class ZYAlbumDetail implements ZYIBaseBean {
         public int follow;
 
         public int fans;
+
+        public String avatarUrl;
     }
 }

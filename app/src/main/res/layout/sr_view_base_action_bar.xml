@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/c1"
     android:layout_height="match_parent">
@@ -58,13 +59,28 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
+        android:src="@drawable/btn_list_n"
         android:layout_marginRight="10dp"
+        tools:visibility="visible"
+        android:background="?attr/actionBarItemBackground"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/ivRightImg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/ivRightImg"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/btn_list_n"
+        tools:visibility="visible"
         android:background="?attr/actionBarItemBackground"
         android:visibility="gone" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
+        android:visibility="gone"
         android:layout_alignParentBottom="true"
         android:background="@color/c6" />
 

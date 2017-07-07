@@ -30,13 +30,14 @@ public class ZYUserDao extends AbstractDao<ZYUser, String> {
         public final static Property Nickname = new Property(3, String.class, "nickname", false, "NICKNAME");
         public final static Property OpenWechatId = new Property(4, String.class, "openWechatId", false, "OPEN_WECHAT_ID");
         public final static Property AvatarUrl = new Property(5, String.class, "avatarUrl", false, "AVATAR_URL");
-        public final static Property AlbumCount = new Property(6, int.class, "albumCount", false, "ALBUM_COUNT");
-        public final static Property Intro = new Property(7, String.class, "intro", false, "INTRO");
-        public final static Property Sex = new Property(8, String.class, "sex", false, "SEX");
-        public final static Property Fans = new Property(9, int.class, "fans", false, "FANS");
-        public final static Property Follow = new Property(10, int.class, "follow", false, "FOLLOW");
-        public final static Property Token = new Property(11, String.class, "token", false, "TOKEN");
-        public final static Property IsLoginUser = new Property(12, boolean.class, "isLoginUser", false, "IS_LOGIN_USER");
+        public final static Property Avatar = new Property(6, String.class, "avatar", false, "AVATAR");
+        public final static Property AlbumCount = new Property(7, int.class, "albumCount", false, "ALBUM_COUNT");
+        public final static Property Intro = new Property(8, String.class, "intro", false, "INTRO");
+        public final static Property Sex = new Property(9, String.class, "sex", false, "SEX");
+        public final static Property Fans = new Property(10, int.class, "fans", false, "FANS");
+        public final static Property Follow = new Property(11, int.class, "follow", false, "FOLLOW");
+        public final static Property Token = new Property(12, String.class, "token", false, "TOKEN");
+        public final static Property IsLoginUser = new Property(13, boolean.class, "isLoginUser", false, "IS_LOGIN_USER");
     }
 
 
@@ -58,13 +59,14 @@ public class ZYUserDao extends AbstractDao<ZYUser, String> {
                 "\"NICKNAME\" TEXT," + // 3: nickname
                 "\"OPEN_WECHAT_ID\" TEXT," + // 4: openWechatId
                 "\"AVATAR_URL\" TEXT," + // 5: avatarUrl
-                "\"ALBUM_COUNT\" INTEGER NOT NULL ," + // 6: albumCount
-                "\"INTRO\" TEXT," + // 7: intro
-                "\"SEX\" TEXT," + // 8: sex
-                "\"FANS\" INTEGER NOT NULL ," + // 9: fans
-                "\"FOLLOW\" INTEGER NOT NULL ," + // 10: follow
-                "\"TOKEN\" TEXT," + // 11: token
-                "\"IS_LOGIN_USER\" INTEGER NOT NULL );"); // 12: isLoginUser
+                "\"AVATAR\" TEXT," + // 6: avatar
+                "\"ALBUM_COUNT\" INTEGER NOT NULL ," + // 7: albumCount
+                "\"INTRO\" TEXT," + // 8: intro
+                "\"SEX\" TEXT," + // 9: sex
+                "\"FANS\" INTEGER NOT NULL ," + // 10: fans
+                "\"FOLLOW\" INTEGER NOT NULL ," + // 11: follow
+                "\"TOKEN\" TEXT," + // 12: token
+                "\"IS_LOGIN_USER\" INTEGER NOT NULL );"); // 13: isLoginUser
     }
 
     /** Drops the underlying database table. */
@@ -106,25 +108,30 @@ public class ZYUserDao extends AbstractDao<ZYUser, String> {
         if (avatarUrl != null) {
             stmt.bindString(6, avatarUrl);
         }
-        stmt.bindLong(7, entity.getAlbumCount());
+ 
+        String avatar = entity.getAvatar();
+        if (avatar != null) {
+            stmt.bindString(7, avatar);
+        }
+        stmt.bindLong(8, entity.getAlbumCount());
  
         String intro = entity.getIntro();
         if (intro != null) {
-            stmt.bindString(8, intro);
+            stmt.bindString(9, intro);
         }
  
         String sex = entity.getSex();
         if (sex != null) {
-            stmt.bindString(9, sex);
+            stmt.bindString(10, sex);
         }
-        stmt.bindLong(10, entity.getFans());
-        stmt.bindLong(11, entity.getFollow());
+        stmt.bindLong(11, entity.getFans());
+        stmt.bindLong(12, entity.getFollow());
  
         String token = entity.getToken();
         if (token != null) {
-            stmt.bindString(12, token);
+            stmt.bindString(13, token);
         }
-        stmt.bindLong(13, entity.getIsLoginUser() ? 1L: 0L);
+        stmt.bindLong(14, entity.getIsLoginUser() ? 1L: 0L);
     }
 
     @Override
@@ -160,25 +167,30 @@ public class ZYUserDao extends AbstractDao<ZYUser, String> {
         if (avatarUrl != null) {
             stmt.bindString(6, avatarUrl);
         }
-        stmt.bindLong(7, entity.getAlbumCount());
+ 
+        String avatar = entity.getAvatar();
+        if (avatar != null) {
+            stmt.bindString(7, avatar);
+        }
+        stmt.bindLong(8, entity.getAlbumCount());
  
         String intro = entity.getIntro();
         if (intro != null) {
-            stmt.bindString(8, intro);
+            stmt.bindString(9, intro);
         }
  
         String sex = entity.getSex();
         if (sex != null) {
-            stmt.bindString(9, sex);
+            stmt.bindString(10, sex);
         }
-        stmt.bindLong(10, entity.getFans());
-        stmt.bindLong(11, entity.getFollow());
+        stmt.bindLong(11, entity.getFans());
+        stmt.bindLong(12, entity.getFollow());
  
         String token = entity.getToken();
         if (token != null) {
-            stmt.bindString(12, token);
+            stmt.bindString(13, token);
         }
-        stmt.bindLong(13, entity.getIsLoginUser() ? 1L: 0L);
+        stmt.bindLong(14, entity.getIsLoginUser() ? 1L: 0L);
     }
 
     @Override
@@ -195,13 +207,14 @@ public class ZYUserDao extends AbstractDao<ZYUser, String> {
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // nickname
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // openWechatId
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // avatarUrl
-            cursor.getInt(offset + 6), // albumCount
-            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // intro
-            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // sex
-            cursor.getInt(offset + 9), // fans
-            cursor.getInt(offset + 10), // follow
-            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11), // token
-            cursor.getShort(offset + 12) != 0 // isLoginUser
+            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // avatar
+            cursor.getInt(offset + 7), // albumCount
+            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // intro
+            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // sex
+            cursor.getInt(offset + 10), // fans
+            cursor.getInt(offset + 11), // follow
+            cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12), // token
+            cursor.getShort(offset + 13) != 0 // isLoginUser
         );
         return entity;
     }
@@ -214,13 +227,14 @@ public class ZYUserDao extends AbstractDao<ZYUser, String> {
         entity.setNickname(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setOpenWechatId(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
         entity.setAvatarUrl(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
-        entity.setAlbumCount(cursor.getInt(offset + 6));
-        entity.setIntro(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
-        entity.setSex(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
-        entity.setFans(cursor.getInt(offset + 9));
-        entity.setFollow(cursor.getInt(offset + 10));
-        entity.setToken(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
-        entity.setIsLoginUser(cursor.getShort(offset + 12) != 0);
+        entity.setAvatar(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
+        entity.setAlbumCount(cursor.getInt(offset + 7));
+        entity.setIntro(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
+        entity.setSex(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
+        entity.setFans(cursor.getInt(offset + 10));
+        entity.setFollow(cursor.getInt(offset + 11));
+        entity.setToken(cursor.isNull(offset + 12) ? null : cursor.getString(offset + 12));
+        entity.setIsLoginUser(cursor.getShort(offset + 13) != 0);
      }
     
     @Override

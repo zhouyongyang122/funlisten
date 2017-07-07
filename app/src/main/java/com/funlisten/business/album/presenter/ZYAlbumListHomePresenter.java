@@ -5,8 +5,8 @@ import com.funlisten.base.mvp.ZYBasePresenter;
 import com.funlisten.service.net.ZYNetSubscriber;
 import com.funlisten.service.net.ZYNetSubscription;
 import com.funlisten.business.album.contract.ZYAlbumListHomeContract;
-import com.funlisten.business.album.model.ZYAblumModel;
-import com.funlisten.business.album.model.bean.ZYCatalog;
+import com.funlisten.business.album.model.ZYAlbumModel;
+import com.funlisten.business.album.model.bean.ZYCategory;
 
 import java.util.List;
 
@@ -14,32 +14,32 @@ import java.util.List;
  * Created by ZY on 17/6/13.
  */
 
-public class ZYAblumListHomePresenter extends ZYBasePresenter implements ZYAlbumListHomeContract.IPresenter {
+public class ZYAlbumListHomePresenter extends ZYBasePresenter implements ZYAlbumListHomeContract.IPresenter {
 
     ZYAlbumListHomeContract.IView mView;
 
-    ZYAblumModel mModel;
+    ZYAlbumModel mModel;
 
-    List<ZYCatalog> mCatalogs;
+    List<ZYCategory> mCategorys;
 
-    public ZYAblumListHomePresenter(ZYAlbumListHomeContract.IView view) {
+    public ZYAlbumListHomePresenter(ZYAlbumListHomeContract.IView view) {
         mView = view;
-        mModel = new ZYAblumModel();
+        mModel = new ZYAlbumModel();
         mView.setPresenter(this);
     }
 
     public void loadData() {
-        mSubscriptions.add(ZYNetSubscription.subscription(mModel.getCatalogs(), new ZYNetSubscriber<ZYResponse<List<ZYCatalog>>>() {
+        mSubscriptions.add(ZYNetSubscription.subscription(mModel.getCategorys(), new ZYNetSubscriber<ZYResponse<List<ZYCategory>>>() {
             @Override
             public void onStart() {
                 super.onStart();
             }
 
             @Override
-            public void onSuccess(ZYResponse<List<ZYCatalog>> response) {
+            public void onSuccess(ZYResponse<List<ZYCategory>> response) {
                 super.onSuccess(response);
-                mCatalogs = response.data;
-                mView.refreshCatalogs(mCatalogs);
+                mCategorys = response.data;
+                mView.refreshCategorys(mCategorys);
             }
 
             @Override

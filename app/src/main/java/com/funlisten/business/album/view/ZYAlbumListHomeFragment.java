@@ -14,9 +14,9 @@ import com.funlisten.base.adapter.ZYFragmentAdapter;
 import com.funlisten.base.mvp.ZYBaseFragment;
 import com.funlisten.base.view.ZYLoadingView;
 import com.funlisten.business.album.contract.ZYAlbumListHomeContract;
-import com.funlisten.business.album.model.ZYAblumModel;
-import com.funlisten.business.album.model.bean.ZYCatalog;
-import com.funlisten.business.album.presenter.ZYAblumListPresenter;
+import com.funlisten.business.album.model.ZYAlbumModel;
+import com.funlisten.business.album.model.bean.ZYCategory;
+import com.funlisten.business.album.presenter.ZYAlbumListPresenter;
 
 import java.util.List;
 
@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 
 /**
  * Created by ZY on 17/6/13.
+ * 专辑列表主页 首页更多进入
  */
 
 public class ZYAlbumListHomeFragment extends ZYBaseFragment<ZYAlbumListHomeContract.IPresenter> implements ZYAlbumListHomeContract.IView {
@@ -56,13 +57,13 @@ public class ZYAlbumListHomeFragment extends ZYBaseFragment<ZYAlbumListHomeContr
     }
 
     @Override
-    public void refreshCatalogs(List<ZYCatalog> catalogs) {
+    public void refreshCategorys(List<ZYCategory> Categorys) {
         ZYFragmentAdapter fragmentAdapter = new ZYFragmentAdapter(getChildFragmentManager());
         ZYAlbumListFragment ablumListFragment;
-        for (ZYCatalog catalog : catalogs) {
+        for (ZYCategory category : Categorys) {
             ablumListFragment = new ZYAlbumListFragment();
-            new ZYAblumListPresenter(ablumListFragment, new ZYAblumModel(), catalog.id);
-            fragmentAdapter.addFragment(ablumListFragment, catalog.name);
+            new ZYAlbumListPresenter(ablumListFragment, new ZYAlbumModel(), category.id);
+            fragmentAdapter.addFragment(ablumListFragment, category.name);
         }
         viewPager.setAdapter(fragmentAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

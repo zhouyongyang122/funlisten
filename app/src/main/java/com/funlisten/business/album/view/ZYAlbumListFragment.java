@@ -8,9 +8,10 @@ import android.view.ViewGroup;
 
 import com.funlisten.base.mvp.ZYListDateFragment;
 import com.funlisten.base.viewHolder.ZYBaseViewHolder;
+import com.funlisten.business.album.activity.ZYAlbumHomeActivity;
 import com.funlisten.business.album.contract.ZYAlbumListContract;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
-import com.funlisten.business.album.view.viewHolder.ZYAlbumListVH;
+import com.funlisten.business.album.view.viewHolder.ZYAlbumListItemVH;
 
 /**
  * Created by ZY on 17/6/13.
@@ -38,11 +39,12 @@ public class ZYAlbumListFragment extends ZYListDateFragment<ZYAlbumListContract.
         ZYAlbumDetail ablum = mAdapter.getItem(position);
         if (ablum != null) {
             //跳转专辑详情
+            mActivity.startActivity(ZYAlbumHomeActivity.createIntent(mActivity, ablum.id));
         }
     }
 
     @Override
     protected ZYBaseViewHolder<ZYAlbumDetail> createViewHolder() {
-        return new ZYAlbumListVH();
+        return new ZYAlbumListItemVH();
     }
 }

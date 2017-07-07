@@ -9,6 +9,10 @@ import com.funlisten.business.login.model.bean.ZYUser;
 
 public class ZYComment implements ZYIBaseBean {
 
+    public ZYComment(int id){
+        this.id = id;
+    }
+
     public String content;
 
     public int id;

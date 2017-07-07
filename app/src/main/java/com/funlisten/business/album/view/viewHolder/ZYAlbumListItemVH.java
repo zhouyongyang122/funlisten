@@ -16,7 +16,7 @@ import butterknife.Bind;
  * Created by ZY on 17/6/16.
  */
 
-public class ZYAlbumListVH extends ZYBaseViewHolder<ZYAlbumDetail> {
+public class ZYAlbumListItemVH extends ZYBaseViewHolder<ZYAlbumDetail> {
 
     @Bind(R.id.imgBg)
     ImageView imgBg;

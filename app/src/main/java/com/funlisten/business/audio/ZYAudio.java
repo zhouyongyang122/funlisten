@@ -15,6 +15,8 @@ public class ZYAudio implements ZYIBaseBean {
 
     public String name;
 
+    public int position;
+
     public int playCount;
 
     public int audioTimeLength;//s

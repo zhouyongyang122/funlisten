@@ -12,6 +12,7 @@ import com.funlisten.service.db.ZYDBManager;
 import com.funlisten.thirdParty.statistics.DataStatistics;
 import com.funlisten.utils.ZYLog;
 import com.funlisten.utils.ZYUncaughtExceptionHandler;
+import com.zzhoujay.richtext.RichText;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -67,12 +68,15 @@ public class ZYApplication extends Application implements ZYUncaughtExceptionHan
         ZYDBManager.getInstance();
         initFileDir();
 
-        ZYUncaughtExceptionHandler crashHandler = ZYUncaughtExceptionHandler.getInstance();
-        crashHandler.init(this, APP_ROOT_DIR, BuildConfig.DEBUG);
-        crashHandler.setListener(this);
+//        ZYUncaughtExceptionHandler crashHandler = ZYUncaughtExceptionHandler.getInstance();
+//        crashHandler.init(this, APP_ROOT_DIR, BuildConfig.DEBUG);
+//        crashHandler.setListener(this);
 
         //在这里初始化
         initBugTags();
+
+        //富文本缓存
+        RichText.initCacheDir(this);
     }
 
     private void initFileDir() {
@@ -116,22 +120,22 @@ public class ZYApplication extends Application implements ZYUncaughtExceptionHan
         this.currentActivity = currentActivity;
     }
 
-    public void addActivity(Activity activity){
+    public void addActivity(Activity activity) {
         allActivities.add(activity);
     }
 
-    public void removeActivity(Activity activity){
+    public void removeActivity(Activity activity) {
         allActivities.remove(activity);
     }
 
-    public void finisedAllActivities(){
+    public void finisedAllActivities() {
         try {
-            for (Activity activity : allActivities){
-                if(activity != null && !activity.isDestroyed() && !activity.isFinishing()){
+            for (Activity activity : allActivities) {
+                if (activity != null && !activity.isDestroyed() && !activity.isFinishing()) {
                     activity.finish();
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }

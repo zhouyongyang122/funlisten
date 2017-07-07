@@ -35,7 +35,7 @@ public class ZYHome implements ZYIBaseBean {
 
     public static class ModuleItem {
         public String coverUrl;//背景地址
-        public String id;//对象id
+        public int id;//对象id
     }
 
     public static class DayListening {

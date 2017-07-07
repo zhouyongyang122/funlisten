@@ -189,6 +189,10 @@ public class ZYBaseActivity<P extends ZYIBasePresenter> extends AppCompatActivit
         mActionBar.showActionRightImg(res, clickListener);
     }
 
+    public void showActionRightImg2(int res,View.OnClickListener clickListener){
+        mActionBar.showActionRightImg2(res,clickListener);
+    }
+
     protected void showWaitDialog(String message) {
         if (mWaitDialog == null) {
             mWaitDialog = new ZYWaitDialog(this);

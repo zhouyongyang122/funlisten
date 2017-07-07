@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.funlisten.base.mvp.ZYBaseFragmentActivity;
-import com.funlisten.business.album.presenter.ZYAblumListHomePresenter;
+import com.funlisten.business.album.presenter.ZYAlbumListHomePresenter;
 import com.funlisten.business.album.view.ZYAlbumListHomeFragment;
 
 /**
@@ -22,7 +22,7 @@ public class ZYAlbumListHomeActivity extends ZYBaseFragmentActivity<ZYAlbumListH
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new ZYAblumListHomePresenter(mFragment);
+        new ZYAlbumListHomePresenter(mFragment);
     }
 
     @Override

@@ -46,16 +46,18 @@ public class ZYUser extends ZYBaseEntity {
     public ZYUser() {
     }
 
-    @Generated(hash = 1753730301)
+    @Generated(hash = 1172012738)
     public ZYUser(String id, String userId, String phone, String nickname,
-            String openWechatId, String avatarUrl, int albumCount, String intro, String sex,
-            int fans, int follow, String token, boolean isLoginUser) {
+            String openWechatId, String avatarUrl, String avatar, int albumCount,
+            String intro, String sex, int fans, int follow, String token,
+            boolean isLoginUser) {
         this.id = id;
         this.userId = userId;
         this.phone = phone;
         this.nickname = nickname;
         this.openWechatId = openWechatId;
         this.avatarUrl = avatarUrl;
+        this.avatar = avatar;
         this.albumCount = albumCount;
         this.intro = intro;
         this.sex = sex;
@@ -185,5 +187,13 @@ public class ZYUser extends ZYBaseEntity {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getAvatar() {
+        return this.avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

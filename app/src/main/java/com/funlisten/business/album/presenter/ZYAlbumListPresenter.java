@@ -7,17 +7,17 @@ import com.funlisten.service.net.ZYNetSubscriber;
 import com.funlisten.service.net.ZYNetSubscription;
 import com.funlisten.business.album.contract.ZYAlbumListContract;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
-import com.funlisten.business.album.model.ZYAblumModel;
+import com.funlisten.business.album.model.ZYAlbumModel;
 
 /**
  * Created by ZY on 17/6/13.
  */
 
-public class ZYAblumListPresenter extends ZYListDataPresenter<ZYAlbumListContract.IView, ZYAblumModel, ZYAlbumDetail> implements ZYAlbumListContract.IPresenter {
+public class ZYAlbumListPresenter extends ZYListDataPresenter<ZYAlbumListContract.IView, ZYAlbumModel, ZYAlbumDetail> implements ZYAlbumListContract.IPresenter {
 
     int mCatagoryId;
 
-    public ZYAblumListPresenter(ZYAlbumListContract.IView view, ZYAblumModel model, int categoryId) {
+    public ZYAlbumListPresenter(ZYAlbumListContract.IView view, ZYAlbumModel model, int categoryId) {
         super(view, model);
         mCatagoryId = categoryId;
     }

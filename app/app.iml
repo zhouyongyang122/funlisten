@@ -107,6 +107,7 @@
     <orderEntry type="library" exported="" name="weibosdkcore_v3.1.1" level="project" />
     <orderEntry type="library" exported="" name="design-24.2.0" level="project" />
     <orderEntry type="library" exported="" name="ucrop-2.2.0" level="project" />
+    <orderEntry type="library" exported="" name="markdown-1.0.5" level="project" />
     <orderEntry type="library" exported="" name="greendao-3.2.0" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-24.2.0" level="project" />
     <orderEntry type="library" exported="" name="glide-transformations-2.0.1" level="project" />
@@ -118,16 +119,18 @@
     <orderEntry type="library" exported="" name="appcompat-v7-24.2.0" level="project" />
     <orderEntry type="library" exported="" name="adapter-rxjava-2.1.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
-    <orderEntry type="library" exported="" name="okio-1.9.0" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-3.5.0" level="project" />
     <orderEntry type="library" exported="" name="wheel-" level="project" />
     <orderEntry type="library" exported="" name="bugtags-lib-2.3.1" level="project" />
     <orderEntry type="library" exported="" name="convenientbanner-2.0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.3" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-24.2.0" level="project" />
+    <orderEntry type="library" exported="" name="disklrucache-2.0.2" level="project" />
     <orderEntry type="library" exported="" name="bottom-sheet-" level="project" />
     <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
     <orderEntry type="library" exported="" name="Msc" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="richtext-2.5.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-24.2.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
@@ -139,10 +142,10 @@
     <orderEntry type="library" exported="" name="converter-gson-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="rxandroid-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="eventbus-3.0.0" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.11.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-24.2.0" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-24.2.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
-    <orderEntry type="library" exported="" name="okhttp-3.4.1" level="project" />
     <orderEntry type="library" exported="" name="logging-interceptor-3.4.1" level="project" />
     <orderEntry type="library" exported="" name="greendao-api-3.2.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />

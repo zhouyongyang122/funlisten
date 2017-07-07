@@ -3,7 +3,7 @@ package com.funlisten.service.net;
 import com.funlisten.base.bean.ZYListResponse;
 import com.funlisten.base.bean.ZYResponse;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
-import com.funlisten.business.album.model.bean.ZYCatalog;
+import com.funlisten.business.album.model.bean.ZYCategory;
 import com.funlisten.business.album.model.bean.ZYComment;
 import com.funlisten.business.audio.ZYAudio;
 import com.funlisten.business.favorite.ZYFavorite;
@@ -41,13 +41,16 @@ public interface ZYRequestApi {
     Observable<ZYResponse<ZYHome>> getHomeData();
 
     @POST("category/list")
-    Observable<ZYResponse<List<ZYCatalog>>> getCatalogs(@Query("level") int level);
+    Observable<ZYResponse<List<ZYCategory>>> getCategorys(@Query("level") int level);
 
     @POST("album/list")
-    Observable<ZYResponse<ZYListResponse<ZYAlbumDetail>>> getAblums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId, @Query("publisherId") int publisherId);
+    Observable<ZYResponse<ZYListResponse<ZYAlbumDetail>>> getAlbums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId, @Query("publisherId") int publisherId);
 
     @POST("album/list")
-    Observable<ZYResponse<ZYListResponse<ZYAlbumDetail>>> getAblums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId);
+    Observable<ZYResponse<ZYListResponse<ZYAlbumDetail>>> getAlbums(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("categoryId") int categoryId);
+
+    @POST("album/detail")
+    Observable<ZYResponse<ZYAlbumDetail>> getAlbumDetail(@Query("id") int id);
 
     @POST("sys/sendCode")
     Observable<ZYResponse> getCode(@Query("phone") String phone, @Query("type") String type);
@@ -244,7 +247,7 @@ public interface ZYRequestApi {
      * @return
      */
     @POST("audio/list")
-    Observable<ZYResponse<ZYListResponse<ZYAudio>>> getAudios(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("albumId") int albumId, @Query("direction") int direction);
+    Observable<ZYResponse<ZYListResponse<ZYAudio>>> getAudios(@Query("pageIndex") int pageIndex, @Query("pageSize") int pageSize, @Query("albumId") int albumId, @Query("direction") String direction);
 
 
     /**

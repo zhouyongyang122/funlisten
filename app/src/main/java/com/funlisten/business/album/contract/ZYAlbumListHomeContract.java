@@ -2,7 +2,7 @@ package com.funlisten.business.album.contract;
 
 import com.funlisten.base.mvp.ZYIBasePresenter;
 import com.funlisten.base.mvp.ZYIBaseView;
-import com.funlisten.business.album.model.bean.ZYCatalog;
+import com.funlisten.business.album.model.bean.ZYCategory;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface ZYAlbumListHomeContract {
 
     interface IView extends ZYIBaseView<IPresenter>{
 
-        void refreshCatalogs(List<ZYCatalog> mCatalogs);
+        void refreshCategorys(List<ZYCategory> mCategorys);
     }
 
     interface IPresenter extends ZYIBasePresenter{
