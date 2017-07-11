@@ -1,6 +1,7 @@
 package com.funlisten.base.viewHolder;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -24,6 +25,11 @@ public abstract class ZYBaseViewHolder<D> {
 
     public void findView(View view){
 
+    }
+
+    public void attachTo(ViewGroup viewGroup) {
+        bindView(LayoutInflater.from(viewGroup.getContext()).inflate(getLayoutResId(), viewGroup, false));
+        viewGroup.addView(getItemView());
     }
 
     public View getDataBindingRoot(Context context, ViewGroup parent) {

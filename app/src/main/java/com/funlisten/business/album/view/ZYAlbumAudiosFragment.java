@@ -7,17 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.funlisten.base.adapter.ZYBaseRecyclerAdapter;
 import com.funlisten.base.mvp.ZYListDateFragment;
 import com.funlisten.base.viewHolder.ZYBaseViewHolder;
 import com.funlisten.business.album.contract.ZYAlbumAudiosContract;
 import com.funlisten.business.album.view.viewHolder.ZYAlbumAudiosHeaderVH;
-import com.funlisten.business.album.view.viewHolder.ZYAlbumHomeHeaderVH;
 import com.funlisten.business.album.view.viewHolder.ZYAudioItemVH;
-import com.funlisten.business.audio.ZYAudio;
+import com.funlisten.business.play.model.ZYAudio;
 import com.funlisten.utils.ZYScreenUtils;
-
-import java.util.List;
 
 /**
  * Created by ZY on 17/7/5.

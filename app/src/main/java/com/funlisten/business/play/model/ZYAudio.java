@@ -1,7 +1,6 @@
-package com.funlisten.business.audio;
+package com.funlisten.business.play.model;
 
 import com.funlisten.base.bean.ZYIBaseBean;
-import com.iflytek.cloud.thirdparty.S;
 
 /**
  * Created by ZY on 17/7/4.
@@ -44,4 +43,8 @@ public class ZYAudio implements ZYIBaseBean {
     public String label;
 
     public int payCount;
+
+    public int sort;//当前顺序
+
+    public boolean isPlaying;
 }

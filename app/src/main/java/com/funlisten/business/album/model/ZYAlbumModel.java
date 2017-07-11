@@ -6,12 +6,10 @@ import com.funlisten.base.mvp.ZYBaseModel;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
 import com.funlisten.business.album.model.bean.ZYCategory;
 import com.funlisten.business.album.model.bean.ZYComment;
-import com.funlisten.business.audio.ZYAudio;
+import com.funlisten.business.play.model.ZYAudio;
 
 import java.util.List;
 
-import retrofit2.http.POST;
-import retrofit2.http.Query;
 import rx.Observable;
 
 /**

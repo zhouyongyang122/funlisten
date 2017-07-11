@@ -5,7 +5,7 @@ import com.funlisten.base.bean.ZYResponse;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
 import com.funlisten.business.album.model.bean.ZYCategory;
 import com.funlisten.business.album.model.bean.ZYComment;
-import com.funlisten.business.audio.ZYAudio;
+import com.funlisten.business.play.model.ZYAudio;
 import com.funlisten.business.favorite.ZYFavorite;
 import com.funlisten.business.login.model.bean.ZYLoginUser;
 import com.funlisten.business.login.model.bean.ZYUser;

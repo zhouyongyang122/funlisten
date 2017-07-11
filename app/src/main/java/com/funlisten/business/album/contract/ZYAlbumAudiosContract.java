@@ -1,10 +1,7 @@
 package com.funlisten.business.album.contract;
 
 import com.funlisten.base.mvp.ZYListDataContract;
-import com.funlisten.business.album.model.bean.ZYAlbumDetail;
-import com.funlisten.business.audio.ZYAudio;
-
-import java.util.List;
+import com.funlisten.business.play.model.ZYAudio;
 
 /**
  * Created by ZY on 17/7/5.

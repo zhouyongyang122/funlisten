@@ -2,7 +2,7 @@ package com.funlisten.business.order;
 
 import com.funlisten.base.activity.picturePicker.ZYAlbum;
 import com.funlisten.base.bean.ZYIBaseBean;
-import com.funlisten.business.audio.ZYAudio;
+import com.funlisten.business.play.model.ZYAudio;
 
 /**
  * Created by ZY on 17/7/4.
