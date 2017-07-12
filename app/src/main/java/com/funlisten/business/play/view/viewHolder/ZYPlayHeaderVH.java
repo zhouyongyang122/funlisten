@@ -7,8 +7,8 @@ import android.widget.TextView;
 import com.funlisten.R;
 import com.funlisten.base.viewHolder.ZYBaseViewHolder;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
-import com.funlisten.business.play.model.ZYAudio;
-import com.funlisten.business.play.model.ZYPlay;
+import com.funlisten.business.play.model.bean.ZYAudio;
+import com.funlisten.business.play.model.bean.ZYPlay;
 import com.funlisten.thirdParty.image.ZYImageLoadHelper;
 
 import java.util.Formatter;

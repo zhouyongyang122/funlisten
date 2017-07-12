@@ -20,5 +20,7 @@ public interface ZYAlbumHomeContract {
         int getAlbumId();
 
         ZYAlbumDetail getAlbumDetail();
+
+        void load();
     }
 }

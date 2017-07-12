@@ -6,7 +6,7 @@ import com.funlisten.base.mvp.ZYBaseModel;
 import com.funlisten.business.album.model.bean.ZYAlbumDetail;
 import com.funlisten.business.album.model.bean.ZYCategory;
 import com.funlisten.business.album.model.bean.ZYComment;
-import com.funlisten.business.play.model.ZYAudio;
+import com.funlisten.business.play.model.bean.ZYAudio;
 
 import java.util.List;
 
@@ -36,6 +36,8 @@ public class ZYAlbumModel extends ZYBaseModel {
     public Observable<ZYResponse<ZYAlbumDetail>> getAlbumDetail(int id) {
         return mApi.getAlbumDetail(id);
     }
+
+
 
     /**
      * 评论列表

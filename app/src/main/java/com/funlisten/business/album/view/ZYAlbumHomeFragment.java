@@ -65,6 +65,8 @@ public class ZYAlbumHomeFragment extends ZYBaseFragment<ZYAlbumHomeContract.IPre
 
         initLoadingView();
 
+        mPresenter.load();
+
         return view;
     }
 

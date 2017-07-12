@@ -5,9 +5,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.funlisten.R;
-import com.funlisten.base.mvp.ZYBaseView;
 import com.funlisten.base.viewHolder.ZYBaseViewHolder;
-import com.funlisten.business.play.model.ZYAudio;
+import com.funlisten.business.play.model.bean.ZYAudio;
 
 import butterknife.Bind;
 import butterknife.OnClick;

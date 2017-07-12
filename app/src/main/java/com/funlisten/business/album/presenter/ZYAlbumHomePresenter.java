@@ -29,6 +29,9 @@ public class ZYAlbumHomePresenter extends ZYBasePresenter implements ZYAlbumHome
         mAlbumId = albumId;
     }
 
+    public void load(){}
+
+
     @Override
     public void subscribe() {
         mView.showLoading();

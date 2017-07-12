@@ -5,7 +5,7 @@ import com.funlisten.base.bean.ZYResponse;
 import com.funlisten.base.mvp.ZYListDataPresenter;
 import com.funlisten.business.album.contract.ZYAlbumAudiosContract;
 import com.funlisten.business.album.model.ZYAlbumModel;
-import com.funlisten.business.play.model.ZYAudio;
+import com.funlisten.business.play.model.bean.ZYAudio;
 import com.funlisten.service.net.ZYNetSubscriber;
 import com.funlisten.service.net.ZYNetSubscription;
 

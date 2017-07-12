@@ -46,12 +46,12 @@ public class ZYRegistPresenter extends ZYBasePresenter implements ZYRegistContra
 
     public void regUser(Map<String, String> paramas) {
         mView.showProgress();
-        mSubscriptions.add(ZYNetSubscription.subscription(mModel.regUser(paramas), new ZYNetSubscriber<ZYResponse<ZYUser>>() {
+        mSubscriptions.add(ZYNetSubscription.subscription(mModel.regUser(paramas), new ZYNetSubscriber<ZYResponse>() {
             @Override
-            public void onSuccess(ZYResponse<ZYUser> response) {
+            public void onSuccess(ZYResponse response) {
                 mView.hideProgress();
                 super.onSuccess(response);
-                mView.registSuc(response.data);
+                mView.registSuc(null);
             }
 
             @Override

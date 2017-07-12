@@ -12,7 +12,7 @@ import com.funlisten.base.viewHolder.ZYBaseViewHolder;
 import com.funlisten.business.album.contract.ZYAlbumAudiosContract;
 import com.funlisten.business.album.view.viewHolder.ZYAlbumAudiosHeaderVH;
 import com.funlisten.business.album.view.viewHolder.ZYAudioItemVH;
-import com.funlisten.business.play.model.ZYAudio;
+import com.funlisten.business.play.model.bean.ZYAudio;
 import com.funlisten.utils.ZYScreenUtils;
 
 /**

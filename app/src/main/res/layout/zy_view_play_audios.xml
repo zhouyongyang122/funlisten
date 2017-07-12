@@ -36,7 +36,7 @@
         android:layout_marginTop="15dp"
         android:background="@color/c6" />
 
-    <android.support.v7.widget.RecyclerView
+    <com.funlisten.base.view.ZYSwipeRefreshRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
